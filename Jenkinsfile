@@ -12,9 +12,18 @@ pipeline {
       steps {
         echo 'Deploying to staging'
         sh 'ls'
+        // sh './deploy staging'
         timeout (time:5, unit: 'DAYS'){
           input 'Does staging looks look ?'
         }
+      }
+    }
+
+    stage('Deploy - Production'){
+      steps{
+        echo 'Deploying to production'
+        sh 'ls'
+        // sh './deploy production'
       }
     }
 
