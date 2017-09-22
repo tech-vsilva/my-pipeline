@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew build'
+                touch 'file_a.txt'
             }
         }
     }
