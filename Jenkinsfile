@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-  stage('Deploy - Staging')
+  stage('Deploy - Staging'){
     echo 'Deploying to staging'
     sh 'ls'
   }
