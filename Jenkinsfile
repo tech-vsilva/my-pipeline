@@ -1,38 +1,20 @@
 pipeline {
   agent any
-
   stages {
-    stage('No op'){
-      steps {
+    stage('Build'){
+      step{
         sh 'ls'
       }
     }
+
+  stage('Deploy - Staging')
+    echo 'Deploying to staging'
+    sh 'ls'
   }
 
-  post {
+  post{
     always {
-      echo 'One way or another, we gonna delete our workspace'
       deleteDir()
     }
-
-    success {
-      echo 'You rock!'
-      echo "${currentBuild.fullDisplayName}"
-      // mail to:'valter.silva@orderbird.com', subject:'Build were successful', body: 'Your build were successful'
-    }
-
-    unstable {
-      echo 'Build is unstable'
-    }
-
-    failure {
-      echo 'Oh man..'
-      // mail to:'valter.silva@orderbird.com', subject:'Build has failed (test)', body: 'Your build has failed'
-    }
-
-    changed {
-      echo 'Things were different before'
-    }
-
   }
 }
