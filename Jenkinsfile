@@ -15,13 +15,15 @@ pipeline {
             }
         }
 
-        stage('Test with env.variable'){
+        stage('Test with env.variable') {
             environment {
                 ENV_VAR_1 = 'environment variable 1'
                 ENV_VAR_2 = 'environment variable 2'
             }
-            echo "${ENV_VAR_1}"
-            echo "${ENV_VAR_2}"
+            steps {
+                echo "${ENV_VAR_1}"
+                echo "${ENV_VAR_2}"
+            }
         }
     }
 }
