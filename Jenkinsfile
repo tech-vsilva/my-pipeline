@@ -1,15 +1,18 @@
 pipeline {
   agent any
   stages {
+
     stage('Build'){
       steps {
         sh 'ls'
       }
     }
 
-    stage('Deploy - Staging'){
-      echo 'Deploying to staging'
-      sh 'ls'
+    stage('Deploy - Staging') {
+      steps {
+        echo 'Deploying to staging'
+        sh 'ls'
+      }
     }
 
   }
@@ -18,5 +21,5 @@ pipeline {
       deleteDir()
     }
   }
-  
+
 }
