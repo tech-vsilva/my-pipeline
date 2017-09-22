@@ -12,6 +12,9 @@ pipeline {
       steps {
         echo 'Deploying to staging'
         sh 'ls'
+        timeout (time:5, unit: 'DAYS'){
+          input 'Does staging looks look ?'
+        }
       }
     }
 
