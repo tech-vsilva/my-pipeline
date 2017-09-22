@@ -17,7 +17,8 @@ pipeline {
 
     success {
       echo 'You rock!'
-      mail to:'valter.silva@orderbird.com', subject:'Build were successful', body: 'Your build were successful'
+      echo "${currentBuild.*}"
+      // mail to:'valter.silva@orderbird.com', subject:'Build were successful', body: 'Your build were successful'
     }
 
     unstable {
@@ -26,7 +27,7 @@ pipeline {
 
     failure {
       echo 'Oh man..'
-      mail to:'valter.silva@orderbird.com', subject:'Build has failed (test)', body: 'Your build has failed'
+      // mail to:'valter.silva@orderbird.com', subject:'Build has failed (test)', body: 'Your build has failed'
     }
 
     changed {
