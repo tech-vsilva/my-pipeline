@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  
+
   stages {
     stage('No op'){
       steps {
@@ -25,6 +25,7 @@ pipeline {
 
     failure {
       echo 'Oh man..'
+      mail to:'valter.silva@orderbird.com', subject:'Build has failed (test)', body: 'Your build has failed'
     }
 
     changed {
