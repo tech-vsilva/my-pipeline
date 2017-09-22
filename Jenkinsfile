@@ -3,7 +3,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                touch 'file_a.txt'
+                sh 'touch file_aa.txt'
+                sh 'touch file_ab.txt'
+                sh 'touch file_ba.txt'
+                sh 'touch file_bb.txt'
             }
         }
     }
