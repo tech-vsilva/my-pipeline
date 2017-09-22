@@ -17,7 +17,7 @@ pipeline {
 
     success {
       echo 'You rock!'
-      currentBuild.*
+      echo "${currentBuild.fullDisplayName}"
       // mail to:'valter.silva@orderbird.com', subject:'Build were successful', body: 'Your build were successful'
     }
 
